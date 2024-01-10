@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "frontend-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "frontend-dev.groboshop.online"
   type    = "A"
@@ -26,7 +26,7 @@ resource "aws_instance" "mongodb" {
   }
 }
 
-resource "aws_route53_record" "mongodb" {
+resource "aws_route53_record" "mongodb-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "mongodb-dev.groboshop.online"
   type    = "A"
@@ -45,7 +45,7 @@ resource "aws_instance" "catalogue" {
   }
 }
 
-resource "aws_route53_record" "catalogue" {
+resource "aws_route53_record" "catalogue-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "catalogue-dev.groboshop.online"
   type    = "A"
@@ -63,7 +63,7 @@ resource "aws_instance" "redis" {
   }
 }
 
-resource "aws_route53_record" "redis" {
+resource "aws_route53_record" "redis-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "redis-dev.groboshop.online"
   type    = "A"
@@ -81,7 +81,7 @@ resource "aws_instance" "user" {
   }
 }
 
-resource "aws_route53_record" "user" {
+resource "aws_route53_record" "user-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "user-dev.groboshop.online"
   type    = "A"
@@ -99,7 +99,7 @@ resource "aws_instance" "cart" {
   }
 }
 
-resource "aws_route53_record" "cart" {
+resource "aws_route53_record" "cart-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "cart-dev.groboshop.online"
   type    = "A"
@@ -117,7 +117,7 @@ resource "aws_instance" "mysql" {
   }
 }
 
-resource "aws_route53_record" "mysql" {
+resource "aws_route53_record" "mysql-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "mysql-dev.groboshop.online"
   type    = "A"
@@ -135,7 +135,7 @@ resource "aws_instance" "shipping" {
   }
 }
 
-resource "aws_route53_record" "shipping" {
+resource "aws_route53_record" "shipping-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "shipping-dev.groboshop.online"
   type    = "A"
@@ -153,7 +153,7 @@ resource "aws_instance" "rabbitmq" {
   }
 }
 
-resource "aws_route53_record" "rabbitmq" {
+resource "aws_route53_record" "rabbitmq-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "rabbitmq-dev.groboshop.online"
   type    = "A"
@@ -171,7 +171,7 @@ resource "aws_instance" "payment" {
   }
 }
 
-resource "aws_route53_record" "payment" {
+resource "aws_route53_record" "payment-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "payment-dev.groboshop.online"
   type    = "A"
@@ -189,7 +189,7 @@ resource "aws_instance" "dispatch" {
   }
 }
 
-resource "aws_route53_record" "dispatch" {
+resource "aws_route53_record" "dispatch-1" {
   zone_id = "Z0244944RMTKRZ3FWKZT"
   name    = "dispatch-dev.groboshop.online"
   type    = "A"
