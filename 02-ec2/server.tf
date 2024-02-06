@@ -1,5 +1,9 @@
+provider "aws" {
+  region = "ap-south-1"
+}
+
 resource "aws_instance" "test" {
-  ami           = "ami-0f3c7d07486cad139"
+  ami           = "ami-06b72b3b2a773be2b"
   instance_type = "t2.micro"
 
   tags = {
