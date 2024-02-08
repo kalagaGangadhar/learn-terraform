@@ -24,8 +24,8 @@ output "fruit_list" {
 #map
 variable "fruits_stock" {
   default = {
-    name="apple"
-    stocke=100
+    apple=100
+    banana=200
   }
 }
 
