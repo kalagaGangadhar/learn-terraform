@@ -14,6 +14,7 @@ resource "aws_instance" "instance" {
 }
 
 resource "aws_security_group" "all_tls" {
+  count = length(var.component)
   tags = {
     Name=element(var.component,count.index )
   }
