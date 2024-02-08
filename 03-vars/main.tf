@@ -1,5 +1,5 @@
 variable "test" {
-  value="hello world"
+  default="hello world"
 }
 
 output "op" {
