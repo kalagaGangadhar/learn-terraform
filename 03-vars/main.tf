@@ -46,7 +46,29 @@ variable "fruit_stock_price" {
     }
   }
 }
-
+#accessing maps
 output "fruits_mapsofmap_first" {
   value = var.fruit_stock_price.apple["price"]
+  # value = var.fruit_stock_price.["apple"].price
+}
+
+# Variable Data Types
+variable "fruit_details" {
+  default = {
+    apple = {
+      stock    = 100          # number
+      type     = "washington" # string
+      for_sale = true         # boolean
+    }
+  }
+}
+
+# Variable in a combination of any other string then it needs to be with in  ${}
+output "test_name_1" {
+  value = "Test Name = ${var.test}"
+}
+
+
+output "fruit_details_apple" {
+  value = "Apple Stock = ${var.fruit_details["apple"].stock} , Apple Type = ${var.fruit_details["apple"].type}, Apple Sale Status = ${var.fruit_details["apple"].for_sale}"
 }
