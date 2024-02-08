@@ -13,12 +13,12 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = ["sg-08db871bebc41e267"]
   for_each               = var.components
   tags                   = {
-    Name = lookup(each.value,"name" null)
+    Name = lookup(each.value,"name", null)
   }
 }
 resource "aws_security_group" "allow_tls" {
   for_each = var.components
   tags                   = {
-    Name = lookup(each.value,"name" null)
+    Name = lookup(each.value,"name", null)
   }
 }
