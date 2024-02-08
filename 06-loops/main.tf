@@ -23,18 +23,18 @@
 #}
 
 #for each by map
-variable "component" {
+variable "components" {
   default = {
 #    frontend={name="frontend"}
-    mongodb={name="mongodb"}
-    catalogue={name="catalogue"}
+    mongodb={ name="mongodb" }
+    catalogue={ name="catalogue" }
   }
 }
 
 resource "aws_instance" "instance" {
-  ami           = "ami-0f3c7d07486cad139"
-  instance_type = "t2.micro"
+  ami                    = "ami-0f3c7d07486cad139"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [ "sg-08db871bebc41e267" ]
-  for_each = var.component
-  name=lookup(var.component,each.value["name"],null )
+  for_each               = var.components
+  name                   = lookup(var.components,each.value["name"],null )
   }
