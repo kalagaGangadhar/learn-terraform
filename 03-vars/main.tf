@@ -49,7 +49,7 @@ variable "fruit_stock_price" {
 #accessing maps
 output "fruits_mapsofmap_first" {
   value = var.fruit_stock_price.apple["price"]
-  # value = var.fruit_stock_price.["apple"].price
+  # value = var.fruit_stock_price["apple"].price
 }
 
 # Variable Data Types
