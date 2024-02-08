@@ -1,7 +1,7 @@
 #for each by map
 variable "components" {
   default = {
-    frontend={name="frontend"}
+    frontend={name="frontend-dev"}
     mongodb={ name="mongodb-dev" }
     catalogue={ name="catalogue-dev" }
   }
