@@ -30,5 +30,5 @@ variable "fruits_stock" {
 }
 
 output "fruits_stock_map" {
-  value = var.fruits_stock[0]
+  value = var.fruits_stock["apple"]
 }
