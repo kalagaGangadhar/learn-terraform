@@ -13,6 +13,6 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = ["sg-08db871bebc41e267"]
   for_each               = var.components
   tags                   = {
-    name = lookup(var.components, each.value["name"], null )
+    Name = lookup(var.components, each.value["name"], null )
   }
 }
