@@ -2,9 +2,9 @@
 data "aws_ami" "ami" {
   most_recent = true
   name_regex  = "Centos-8-DevOps-Practice"
-  owners      = ["973714476881"]
+  owners      = ["973714476881"]   //owner should who created ami
 }
 
-output "ami" {
-  value = data.aws_ami.ami
-}
+#output "ami" {
+#  value = data.aws_ami.ami
+#}
