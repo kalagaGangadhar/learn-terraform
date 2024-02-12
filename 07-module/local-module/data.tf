@@ -8,3 +8,11 @@ data "aws_ami" "ami" {
 output "ami" {
   value = data.aws_ami.ami
 }
+
+resource "aws_instance" "instance" {
+  ami           = data.aws_ami.ami.id
+  instance_type = var.instance_type
+  vpc_security_group_ids = ["sg-08db871bebc41e267"]
+}
+
+variable "instance_type" {}
