@@ -38,3 +38,6 @@ output "fruits_list" {
 output "fruit_map" {
   value = var.fruits_map["apple"]
 }
+output "fruit_map_maps" {
+  value = var.fruits_map_maps["apple"].stock
+}
