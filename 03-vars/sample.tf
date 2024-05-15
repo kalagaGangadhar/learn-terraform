@@ -1,43 +1,79 @@
-variable "fruit" {
+# Plain Variable
+variable "fruit_name" {
   default = "apple"
 }
 
-variable "fruits_with_list" {
-  default = [
-  "apple",
-  "banana"
-  ]
-}
-
-variable "fruits_map" {
-  default = {
-    apple=10
-    banana=20
-  }
-}
-
-variable "fruits_map_maps" {
-  default = {
-    apple={
-      stock=10
-      price=100
-    }
-    banana={
-      stock=20
-      price=500
-    }
-  }
-}
-
 output "fruit_name" {
-  value = element(var.fruits_with_list,2 )
+  value = var.fruit_name
 }
-output "fruits_list" {
-  value = var.fruits_with_list[0]
+
+# List Variable
+variable "fruits" {
+  default = [
+    "apple",
+    "banana"
+  ]
+  // default = [ "apple", "banana" ] // Single line syntax
 }
-output "fruit_map" {
-  value = var.fruits_map["apple"]
+
+# Map Variable , Plain
+variable "fruit_stock" {
+  default = {
+    apple  = 100
+    banana = 200
+  }
 }
-output "fruit_map_maps" {
-  value = var.fruits_map_maps["apple"].stock
+
+# Map Variable, Map of Maps
+variable "fruit_stock_with_price" {
+  default = {
+    apple = {
+      stock = 200
+      price = 3
+    }
+    banana = {
+      stock = 400
+      price = 1
+    }
+  }
+}
+
+## Access a list variable, List index starts from zero
+output "fruits_first" {
+  value = var.fruits[0]
+  // value = element(var.fruits, 0)
+}
+
+output "fruits_second" {
+  value = var.fruits[1]
+}
+
+## Access a Map Variable
+output "fruit_stock_apple" {
+  value = var.fruit_stock["apple"]
+}
+
+output "fruit_stock_with_price_of_apple" {
+  value = var.fruit_stock_with_price["apple"].stock
+}
+
+# Variable Data Types
+variable "fruit_details" {
+  default = {
+    apple = {
+      stock    = 100          # number
+      type     = "washington" # string
+      for_sale = true         # boolean
+    }
+  }
+}
+
+# Variable in a combination of any other string then it needs to be with in  ${}
+output "fruit_name_1" {
+  value = "Fruit Name = ${var.fruit_name}"
+}
+
+
+output "fruit_details_apple" {
+  value = "Apple Stock = ${var.fruit_details["apple"].stock} , Apple Type = ${var.fruit_details["apple"].type}, Apple Sale Status = ${var.fruit_details["apple"].for_sale}"
 }
