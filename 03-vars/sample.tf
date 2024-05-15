@@ -30,7 +30,7 @@ variable "fruits_map_maps" {
 }
 
 output "fruit_name" {
-  value = var.fruit
+  value = element(var.fruit,0 )
 }
 output "fruits_list" {
   value = var.fruits_with_list[0]
