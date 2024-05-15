@@ -32,6 +32,9 @@ variable "fruits_map_maps" {
 output "fruit_name" {
   value = var.fruit
 }
-output "fruits" {
+output "fruits_list" {
   value = var.fruits_with_list[0]
+}
+output "fruit_map" {
+  value = var.fruits_map["apple"]
 }
