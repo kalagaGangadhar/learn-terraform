@@ -1,6 +1,6 @@
 
 variable "componrnts" {
-  default = ["catalogue", "frontend", "mongodb"]
+  default = ["frontend", "mongodb"]
 }
 
 resource "aws_instance" "instance" {
@@ -11,4 +11,9 @@ resource "aws_instance" "instance" {
   tags = {
     Name = element(var.componrnts,count.index )
   }
+}
+
+resource "aws_security_group" "allow-tls" {
+  count = length(var.componrnts)
+  name = element(var.componrnts, count.index)
 }
