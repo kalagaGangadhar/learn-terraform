@@ -24,6 +24,20 @@ variable "fruit_stock" {
   }
 }
 
+# Map Variable, Map of Maps
+variable "fruit_stock_with_price" {
+  default = {
+    apple = {
+      stock = 100
+      price= 3
+    }
+    banana = {
+      stock = 200
+      price = 5
+    }
+  }
+}
+
 ## Access a list variable, List index starts from zero
 output "fruit_one" {
   value = var.friuts[0]
@@ -35,6 +49,10 @@ output "fruit_two" {
 }
 
 #access map variable
-output "fruit_stock" {
+output "fruit_stock_apple" {
   value = var.fruit_stock["apple"]
+}
+
+output "fruit_stock_with_price_of_apple" {
+  value = var.fruit_stock_with_price["apple"].stock
 }
