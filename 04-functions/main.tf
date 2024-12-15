@@ -1,6 +1,9 @@
 variable "fruits" {
   default = ["apple","banana"]
 }
+output "length" {
+  value = length(var.fruits)
+}
 
 output "fruit" {
   //value = var.fruits[2]
