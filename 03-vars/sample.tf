@@ -45,7 +45,7 @@ output "fruit_one" {
 }
 
 output "fruit_two" {
-  value = var.friuts[1]
+  value = "second value is ${var.friuts[1]}"
 }
 
 #access map variable
