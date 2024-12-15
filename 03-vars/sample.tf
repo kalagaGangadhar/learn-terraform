@@ -6,3 +6,15 @@ variable "fruit_name" {
 output "fruit_name" {
   value = var.fruit_name
 }
+
+#List variable
+variable "friuts" {
+  default = [
+    "apple",
+    "orange"
+  ]
+}
+
+output "fruits" {
+  value = var.friuts[0]
+}
