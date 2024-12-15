@@ -9,7 +9,7 @@ output "instance_details" {
 
 data "aws_ami_ids" "ami" {
   owners = ["973714476881"]
-  name_regex = "centos-*"
+  name_regex = "Centos-*"
 }
 
 output "ami" {
