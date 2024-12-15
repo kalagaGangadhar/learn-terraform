@@ -21,5 +21,5 @@ output "fruit_stock" {
 }
 
 output "fruit_stock_price" {
-  value = try(var.fruit_with_stock["banana"].stock,10)
+  value = try(var.fruit_with_stock["apple"].stock,10)
 }
