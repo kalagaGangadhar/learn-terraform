@@ -11,6 +11,6 @@ resource "aws_instance" "instance" {
   instance_type = "t2.micro"
   vpc_security_group_ids = ["sg-0f881d5350b65ec8c"]
   tags = {
-    Name = lookup(var.components, each.value["name"], null)
+    Name = lookup(each.value, "name", null)
   }
 }
