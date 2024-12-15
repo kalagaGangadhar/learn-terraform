@@ -15,7 +15,12 @@ variable "friuts" {
   ]
 }
 
-output "fruits" {
-  //value = var.friuts[2]
-  value = element(var.friuts, 2)
+## Access a list variable, List index starts from zero
+output "fruit_one" {
+  value = var.friuts[0]
+  //value = element(var.friuts, 2)
+}
+
+output "fruit_two" {
+  value = var.friuts[1]
 }
