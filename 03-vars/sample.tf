@@ -13,6 +13,15 @@ variable "friuts" {
     "apple",
     "orange"
   ]
+  // default = [ "apple", "banana" ] // Single line syntax
+}
+
+# Map Variable , Plain
+variable "fruit_stock" {
+  default = {
+    apple=100
+    orange=200
+  }
 }
 
 ## Access a list variable, List index starts from zero
@@ -23,4 +32,9 @@ output "fruit_one" {
 
 output "fruit_two" {
   value = var.friuts[1]
+}
+
+#access map variable
+output "fruit_stock" {
+  value = var.fruit_stock["apple"]
 }
