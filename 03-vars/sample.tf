@@ -16,6 +16,6 @@ variable "friuts" {
 }
 
 output "fruits" {
-  //value = var.friuts[1]
-  value = element(var.friuts, 0)
+  value = var.friuts[2]
+  //value = element(var.friuts, 0)
 }
