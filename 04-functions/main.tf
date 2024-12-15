@@ -21,6 +21,6 @@ output "fruit_stock" {
 }
 
 output "fruit_stock_price" {
-  value = lookup(var.fruit_with_stock["banana"],"stock", 2)
+  value = lookup(var.fruit_with_stock["apple"], "stock", 2)
   //try(var.fruit_with_stock["apple"].stock,10)
 }
