@@ -1,15 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.54.1"
-    }
-    null = {
-      source  = "hashicorp/null"
-      version = "3.2.2"
-    }
-  }
-}
 resource "aws_instance" "instances" {
   ami = data.aws_ami.ami.id
   vpc_security_group_ids = var.security_group
