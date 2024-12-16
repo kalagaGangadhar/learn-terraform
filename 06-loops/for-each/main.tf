@@ -1,5 +1,6 @@
 variable "components" {
   default = {
+    redis = { name = "redis-dev" }
     user = { name = "user-dev" }
     frontend = { name = "frontend-dev" }
     mongodb = { name = "mongodb-dev" }
