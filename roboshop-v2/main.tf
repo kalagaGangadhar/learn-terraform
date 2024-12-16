@@ -47,5 +47,5 @@ resource "aws_instance" "instance" {
 
 output "record" {
   //value = lookup(aws_instance.instance, "frontend", null)
-  value = aws_instance.instance.private_ip
+  value = aws_instance.instance["frontend"].private_ip
 }
