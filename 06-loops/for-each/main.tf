@@ -1,7 +1,7 @@
 variable "components" {
   default = {
     redis = { name = "redis-dev" }
-    frontend = { name ="frontend-dev" }
+    frontend = { name = "frontend-dev" }
     mongodb = { name = "mongodb-dev" }
     catalogue = { name = "catalogue-dev" }
   }
@@ -17,8 +17,12 @@ variable "components" {
 #     Name = lookup(var.components, each.value["name"], null)
 #   }
 # }
-resource "aws_security_group" "security" {
+# resource "aws_security_group" "security" {
+#   for_each = var.components
+#   //name = lookup(each.value, "name", null)
+#   name     = lookup(var.components, each.value["name"], null)
+# }
+resource "aws_security_group" "allow_tls" {
   for_each = var.components
-  //name = lookup(each.value, "name", null)
   name     = lookup(var.components, each.value["name"], null)
 }
