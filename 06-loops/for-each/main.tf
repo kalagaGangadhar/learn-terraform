@@ -15,3 +15,7 @@ resource "aws_instance" "instance" {
     Name = lookup(each.value, "name", null)
   }
 }
+resource "aws_security_group" "security" {
+  for_each = var.components
+  name = lookup(each.value, "name", null)
+}
