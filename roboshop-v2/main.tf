@@ -36,16 +36,16 @@ resource "aws_instance" "instance" {
   }
 }
 
-# resource "aws_route53_record" "record" {
-#   for_each = var.components
-#   name    = "${lookup(each.value, "name", null)}.kroboshop.online"
-#   type    = "A"
-#   zone_id = "Z03445401G5DDDTFSFC1"
-#   ttl     = 30
-#   records = [aws_instance.instance]
-# }
-
-output "record" {
-  //value = lookup(aws_instance.instance, "frontend", null)
-  value = aws_instance.instance["frontend"].private_ip
+resource "aws_route53_record" "record" {
+  for_each = var.components
+  name    = "${lookup(each.value, "name", null)}.kroboshop.online"
+  type    = "A"
+  zone_id = "Z03445401G5DDDTFSFC1"
+  ttl     = 30
+  records = [lookup(lookup(aws_instance.instance, each.key, null), "private_ip", null)]
 }
+
+# output "record" {
+#   //value = lookup(aws_instance.instance, "frontend", null)
+#   value = aws_instance.instance["frontend"].private_ip
+# }
