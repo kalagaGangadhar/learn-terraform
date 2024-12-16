@@ -45,6 +45,6 @@ resource "aws_instance" "instance" {
 #   records = [aws_instance.instance]
 # }
 
-# output "record" {
-#   value = lookup(aws_instance.instance, "frontend", null)
-# }
+output "record" {
+  value = lookup(aws_instance.instance, "frontend", null)
+}
